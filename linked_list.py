@@ -1,3 +1,8 @@
+def data_type_validation(data):
+    if type(data) is not int:
+        raise ValueError("Please enter a number.")
+
+
 class Node:
 
     def __init__(self, data):
@@ -14,8 +19,7 @@ class LinkedList:
 
     def insert(self, data):
 
-        if type(data) is not int:
-            raise ValueError("Please enter a number.")
+        data_type_validation(data)
 
         self.num_of_nodes = self.num_of_nodes + 1
         new_node = Node(data)
@@ -29,6 +33,21 @@ class LinkedList:
                 actual_node = actual_node.next_node
 
             actual_node.next_node = new_node
+
+
+    def insert_left(self, data):
+
+        data_type_validation(data)
+
+        self.num_of_nodes = self.num_of_nodes + 1
+        new_node = Node(data)
+
+        if not self.head:
+            self.head = new_node
+        else:
+            new_node.next_node = self.head
+            self.head = new_node
+
 
     def size_of_list(self):
         return self.num_of_nodes
@@ -69,10 +88,10 @@ class LinkedList:
 
     def return_M(self, m):
 
+        data_type_validation(m)
+
         if m > self.num_of_nodes-1:
             raise ValueError("Please enter a valid M-number. Тhe number cannot be greater than the length of the list - 1")
-        elif type(m) is not int:
-            raise ValueError("Please enter a number.")
 
         n = self.num_of_nodes - m
 
