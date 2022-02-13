@@ -34,7 +34,7 @@ def get_element():
         if "invalid literal for int()" in str(e):
             messagebox.showerror(title='Error', message='Please enter only numbers')
         else:
-            messagebox.showerror(title='Error', message="Please enter a valid M-number. Тhe number cannot be greater than the length of the list - 1")
+            messagebox.showerror(title='Error', message="Please enter a valid M-number. Тhe number cannot be negative or greater than the length of the list - 1 ")
 
 
 def clear_list():
