@@ -1,5 +1,5 @@
 def data_type_validation(data):
-    if type(data) is not int:
+    if type(data) is not int or data < 0:
         raise ValueError("Please enter a number.")
 
 
@@ -90,8 +90,8 @@ class LinkedList:
 
         data_type_validation(m)
 
-        if m > self.num_of_nodes-1:
-            raise ValueError("Please enter a valid M-number. Тhe number cannot be greater than the length of the list - 1")
+        if m > self.num_of_nodes-1 or m < 0:
+            raise ValueError("Please enter a valid M-number. Тhe number cannot be negative or greater than the length of the list - 1 ")
 
         n = self.num_of_nodes - m
 
