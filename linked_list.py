@@ -1,5 +1,5 @@
 def data_type_validation(data):
-    if type(data) is not int or data < 0:
+    if type(data) is not int:
         raise ValueError("Please enter a number.")
 
 
